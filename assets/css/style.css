@@ -11,38 +11,34 @@ html {
 }
 
 body {
-    background-color: white;
+    background-color: rgb(233, 232, 232);
     height: 100vh;
 }
 
 .interface {
-    max-width: 1280px;
+    max-width: 90vw;
     margin: 0 auto;
 }
 /*==FIM DO RESET GLOBAL==*/
 
-
 /*==MENU SUPERIOR==*/
 header {
-    border: 6px solid red;/*==remover depois==*/
-    padding: 5px 15%;
+    padding: 0 10%;
     box-shadow: black 0px 2px 10px;
+    height: 6vh;
 }
 
 header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 2.7em;
+    height: 6vh;
 }
 
 .logo img {
-    width: 80px;
+    width: clamp(60px, 5vw, 100px);
 }
 
-header nav ul {
-    list-style-type: none;
-}
 
 header nav ul li {
     display: inline-block;
@@ -50,11 +46,13 @@ header nav ul li {
 }
 
 header a {
+    list-style-type: none;
     color: rgb(87, 85, 85);
     text-decoration: none;
     font-weight: 600;
     display: inline-block;
     transition: .2s;
+    font-size: 1vw;
 }
 
 header a:hover {
@@ -63,53 +61,96 @@ header a:hover {
 }
 
 header .btn-contato button {
-    padding: 6px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: .5em 1em;
     font-size: 12px;
     font-weight: 600;
-    background-color: white;
-    color: black;
+    background-color: #25D366;
+    color: rgb(238, 238, 238);
     border-radius: 20px;
     border: none;
     box-shadow: black 2px 2px 10px;
     cursor: pointer;
+    animation: buttonPulse 2s infinite;
+}
+
+.whatsapp{
+    width: 1vw;
+    display: inline-block;
 }
 
 header .btn-contato button:hover {
     box-shadow: 0px 0px 8px green;
+    animation: none;
 }
+
+header .btn-contato button:hover .whatsapp {
+    animation: iconPulse .8s infinite;
+    transform-origin: center;
+}
+
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes iconPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 /*==FIM DO MENU SUPERIOR*/
 
 
 /*==BANNER PRINCIPAL==*/
 .banner {
     background: #8c8c8c;
-    padding: 15px 0;
-    margin: 0 auto 100px;
-    border: 6px solid rgb(255, 153, 0);/*==remover depois==*/
+    padding: .5em 0;
 }
 
 #slider {
-    border: 6px solid blue;/*==remover depois*/
-    max-width: 900px;
-    margin: 10px auto;
+    padding: 2vw 0 0 0;
+    width: 79vw;
+    margin: 0 auto;
     text-align: center;
     position: relative;
     height: 80vh;
 }
 
 #slides {
-    padding: 10px;
-    border: 6px solid green;
+    height: 60%;
 }
 
 #overflow {
     overflow: hidden;
+    height: 100%;
 }
 
 #slides .inner {
     display: flex;
     width: 400%;
-    height: 350px;
+    height: 100%;
     transition: .8s;
 }
 
@@ -158,20 +199,19 @@ input[type=radio] {
     margin-left: -300%;
 }
 
-#bullets {
-    margin-top: 15px;
-    border: 6px solid purple;/*==remover depois==*/
-    padding: 10px;
-}
-
 #bullets label {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 1vw;
+    height: 1vw;
+    margin: 0 .5vw;
     background: #ccc;
     border-radius: 50%;
-    margin: 0 5px;
     cursor: pointer;
+    transition: transform .3s;
+}
+
+#bullets label:hover {
+    transform: scale(1.2);
 }
 
 #slide1:checked~#bullets label:nth-child(1),
@@ -183,10 +223,10 @@ input[type=radio] {
 
 #controls label {
     position: absolute;
-    top: 50%;
+    top: 33%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 2vw;
     cursor: pointer;
     opacity: .6;
 }
@@ -212,16 +252,12 @@ input[type=radio] {
 }
 
 .slider-info {
-    border: 6px solid rgb(128, 87, 0);/*==remover depois==*/
-    margin-top: 20px;
     text-align: left;
-    color: white;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    color: rgb(0, 0, 0);
     opacity: 0;
     transform: translateX(-60px);
     transition: .8s ease;
+    height: 28vh;
 }
 
 .slider-info.active {
@@ -230,15 +266,11 @@ input[type=radio] {
 }
 
 .slider-info h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    font-size: 2em;
 }
 
 .slider-info p {
-    font-size: 16px;
+    font-size: 1em;
     opacity: .85;
-    max-width: 600px;
-    margin: 0;
-    /* ← REMOVE CENTRALIZAÇÃO */
 }
 /*==FIM DO BANNER PRINCIPAL==*/
