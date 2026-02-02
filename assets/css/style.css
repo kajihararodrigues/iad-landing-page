@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-color: rgb(233, 232, 232);
+    background-color: #e9e8e8;
     height: 100vh;
 }
 
@@ -19,6 +19,38 @@ body {
     max-width: 90vw;
     margin: 0 auto;
 }
+
+.btn-contato button {
+    display: flex;
+    align-items: center;
+    gap: .5vw;
+    padding: .5vw 1vw;
+    font-size: .6vw;
+    font-weight: 600;
+    background-color: #25D366;
+    color: rgb(238, 238, 238);
+    border-radius: 1vw;
+    border: none;
+    box-shadow: black .2vw .2vw .9vw;
+    cursor: pointer;
+    animation: buttonPulse 2s infinite;
+}
+
+.whatsapp {
+    width: 1vw;
+    display: inline-block;
+}
+
+.btn-contato button:hover {
+    box-shadow: 0 .2vw .2vw green;
+    animation: none;
+}
+
+.btn-contato button:hover .whatsapp {
+    animation: iconPulse .8s infinite;
+    transform-origin: center;
+}
+
 /*==FIM DO RESET GLOBAL==*/
 
 /*==MENU SUPERIOR==*/
@@ -39,7 +71,6 @@ header>.interface {
     width: clamp(60px, 5vw, 100px);
 }
 
-
 header nav ul li {
     display: inline-block;
     padding: 0 20px;
@@ -59,38 +90,6 @@ header a:hover {
     color: black;
     transform: scale(1.1);
 }
-
-header .btn-contato button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: .5em 1em;
-    font-size: 12px;
-    font-weight: 600;
-    background-color: #25D366;
-    color: rgb(238, 238, 238);
-    border-radius: 20px;
-    border: none;
-    box-shadow: black 2px 2px 10px;
-    cursor: pointer;
-    animation: buttonPulse 2s infinite;
-}
-
-.whatsapp{
-    width: 1vw;
-    display: inline-block;
-}
-
-header .btn-contato button:hover {
-    box-shadow: 0px 0px 8px green;
-    animation: none;
-}
-
-header .btn-contato button:hover .whatsapp {
-    animation: iconPulse .8s infinite;
-    transform-origin: center;
-}
-
 
 @keyframes buttonPulse {
     0% {
@@ -122,20 +121,20 @@ header .btn-contato button:hover .whatsapp {
 
 /*==FIM DO MENU SUPERIOR*/
 
-
 /*==BANNER PRINCIPAL==*/
 .banner {
     background: #8c8c8c;
-    padding: .5em 0;
+    padding: .1vw 0;
 }
 
 #slider {
     padding: 2vw 0 0 0;
     width: 79vw;
+    height: 85vh;
     margin: 0 auto;
     text-align: center;
     position: relative;
-    height: 80vh;
+
 }
 
 #slides {
@@ -160,23 +159,27 @@ header .btn-contato button:hover .whatsapp {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 30px;
+    font-size: 2vw;
 }
 
 .slide_1 {
-    background: black;/*==fundo do slide 1==*/
+    background: black;
+    /*==fundo do slide 1==*/
 }
 
 .slide_2 {
-    background: blue;/*==fundo do slide 2==*/
+    background: blue;
+    /*==fundo do slide 2==*/
 }
 
 .slide_3 {
-    background: green;/*==fundo do slide 3==*/
+    background: green;
+    /*==fundo do slide 3==*/
 }
 
 .slide_4 {
-    background: goldenrod;/*==fundo do slide 4==*/
+    background: goldenrod;
+    /*==fundo do slide 4==*/
 }
 
 input[type=radio] {
@@ -203,7 +206,7 @@ input[type=radio] {
     display: inline-block;
     width: 1vw;
     height: 1vw;
-    margin: 0 .5vw;
+    margin: 1VW .5vw;
     background: #ccc;
     border-radius: 50%;
     cursor: pointer;
@@ -229,6 +232,7 @@ input[type=radio] {
     height: 2vw;
     cursor: pointer;
     opacity: .6;
+    margin: 0 -1vw;
 }
 
 #controls label:hover {
@@ -266,11 +270,334 @@ input[type=radio] {
 }
 
 .slider-info h1 {
-    font-size: 2em;
+    font-size: 2.5vw;
 }
 
 .slider-info p {
-    font-size: 1em;
+    font-size: 1.5vw;
     opacity: .85;
 }
+
 /*==FIM DO BANNER PRINCIPAL==*/
+
+
+/*==SEÇÃO 01==*/
+.flex {
+    display: flex;
+    max-width: 80vw;
+    margin: 1vw auto;
+    position: relative;
+    padding: 1vw;
+}
+
+section .topo-do-site {
+    padding: 1vw 4%;
+}
+
+section .topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.topo-do-site h1 {
+    font-size: 2vw;
+    margin-right: 5vw;
+    line-height: 1.2;
+}
+
+.topo-do-site p {
+    font-size: 1vw;
+    margin-right: 5vw;
+    line-height: 1.2;
+    margin: .5vw;
+}
+
+.topo-do-site .btn-contato {
+    margin-top: 7vw;
+}
+
+.img-topo-site img {
+    width: 50vw;
+    height: 15vw;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*==FIM DA SEÇÃO 01==*/
+
+/*==CARD-SLIDER ELÉTRICA==*/
+.carrosel-wrapper {
+    padding: 20px;
+    max-width: 80vw;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carrosel {
+    overflow: hidden;
+    position: relative;
+}
+
+.track {
+    display: flex;
+    gap: 1VW;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: 1VW;
+
+}
+
+.card {
+    flex: 0 0 auto;
+    width: 12vw;
+    height: 25rem;
+    padding: .1vw;
+    background: #333;
+    border-radius: 1vw;
+    color: white;
+    text-align: center;
+
+}
+
+.card img {
+    width: 15rem;
+    margin-top: .6vw;
+}
+
+.card h3 {
+    font-size: .8vw;
+}
+
+.card p {
+    font-size: 13px;
+    opacity: .8;
+}
+
+.card a {
+    display: inline-block;
+    padding: .3vw 1vw;
+    background: white;
+    color: black;
+    border-radius: 1vw;
+    text-decoration: none;
+    font-size: .6vw;
+    font-weight: 600;
+}
+
+@keyframes spin {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.arrow {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: .9;
+    z-index: 20;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+.arrow.left {
+    left: -55px;
+}
+
+.arrow.right {
+    right: -55px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: .1vw;
+}
+
+.dots span {
+    display: inline-block;
+    width: .6vw;
+    height: .6vw;
+    gap: 1vw;
+    background: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.dots span:nth-child(1) {
+    animation: dot 40s infinite;
+}
+
+.dots span:nth-child(2) {
+    animation: dot 40s infinite 13s;
+}
+
+.dots span:nth-child(3) {
+    animation: dot 40s infinite 26s;
+}
+
+@keyframes dot {
+
+    0%,
+    20% {
+        background: #333;
+    }
+
+    21%,
+    100% {
+        background: #ccc;
+    }
+}
+
+.titulo-eletrica {
+    display: flex;
+    font-size: .8vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo-refrigeracao {
+    display: flex;
+    font-size: .8vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrosel::before,
+.carrosel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carrosel::before {
+    left: 0;
+    background: linear-gradient(to right, #e9e8e8 10%, transparent 100%);
+}
+
+.carrosel::after {
+    right: 0;
+    background: linear-gradient(to left, #e9e8e8 10%, transparent 100%);
+}
+
+.carrosel-wrapper:hover .group {
+    animation-play-state: paused;
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(30px) scale(.95);
+    transition: all .6s ease;
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.card:nth-child(1) {
+    transition-delay: .1s;
+}
+
+.card:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.card:nth-child(3) {
+    transition-delay: .3s;
+}
+
+.card:nth-child(4) {
+    transition-delay: .4s;
+}
+
+.card:nth-child(5) {
+    transition-delay: .5s;
+}
+
+.card:nth-child(6) {
+    transition-delay: .6s;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: .8s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/*==FIM DO CARD-SLIDER ELÉTRICA==*/
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    z-index: 999;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: #111;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    cursor: pointer;
+}
