@@ -15,17 +15,46 @@
     <title>IAD soluções elétricas e refrigeração</title>
 </head>
 
+<a href="https://wa.me/5511999999999?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+    class="whatsapp-float" target="_blank" aria-label="Falar no WhatsApp">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+
+</a>
+
 <body>
+    <div class="top-info-bar">
+        <div class="top-info-wrapper">
+
+            <div class="top-left">
+                Rua Exemplo, 123 – Jardim – Mauá / SP
+            </div>
+
+            <div class="top-center">
+                Atendimento 24 horas
+            </div>
+
+            <div class="top-right">
+                <a href="https://wa.me/5511999999999" target="_blank">
+                    (11) 99999-9999
+                </a>
+            </div>
+
+        </div>
+    </div>
+
 
     <header>
 
-        <div class="interface">
+        <div class="interface header-flex">
 
             <div class="logo">
-                <a href="#home">
-                    <img src="./assets/img/logo-padrão.png">
+                <a href="#home" class="logo-text">
+                    <span class="logo-big">IAD</span>
+                    <span class="logo-small">Soluções elétricas<br>e refrigeração</span>
                 </a>
             </div>
+
 
             <nav class="menu-desktop">
                 <ul>
@@ -35,22 +64,12 @@
                     <li><a href="#">Contato</a></li>
                 </ul>
             </nav>
-
-            <div class="btn-contato">
-                <button>
-                    Solicitar Orçamento
-                    <img class="whatsapp" src="./assets/icons/whatsapp.png">
-                </button>
-            </div>
-
         </div>
 
     </header>
 
     <main>
-        <!-- ==FIM DO MENU== -->
 
-        <!-- ==INICIO DO BANNER PRINCIPAL== -->
         <section class="banner" id="home">
 
             <div id="slider">
@@ -66,16 +85,20 @@
                         <div class="inner">
 
                             <div class="slide slide_1">
-                                <h2>Slide 1</h2>
+                                <h2>Especialistas em elétrica residencial</h2>
+                                <p>Segurança, qualidade e confiança para sua casa</p>
                             </div>
                             <div class="slide slide_2">
-                                <h2>Slide 2</h2>
+                                <h2>Climatização para sua casa</h2>
+                                <p>Instaçaão e manuteção com excelência</p>
                             </div>
                             <div class="slide slide_3">
-                                <h2>Slide 3</h2>
+                                <h2>A melhor escolha em elétrica industrial</h2>
+                                <p>confiabilidade e desempenho para sua operação</p>
                             </div>
                             <div class="slide slide_4">
-                                <h2>Slide 4</h2>
+                                <h2>Refrigeração industrial especializada</h2>
+                                <p>soluções completas para sistemas industriais</p>
                             </div>
 
                         </div>
@@ -96,41 +119,18 @@
 
                 <div class="slider-info reveal-left">
 
-                    <h1>Soluções elétricas e refrigeração</h1>
-                    <p>
-                        Atendimento residencial, comercial e industrial com qualidade,
-                        segurança e compromisso.
-                    </p>
-                </div>
+                    <img class="slider-logo" src="./assets/logo/logoIAD.png">
 
-            </div>
+                    <div class="slider-text">
+                        <h1>Especialistas em elétrica e climatização</h1>
+                        <p>
+                            A IAD Soluções Elétricas & Refrigeração atua há <b>8 anos</b> com <b>projetos, manutenções e
+                                laudos
+                                técnicos, entre outros serviços</b> disponibilizando <b>atendimento 24h</b>, garantindo
+                            segurança, eficiência e solução completa para sua
+                            empresa ou residência.
 
-        </section>
-
-        <!-- ==FIM DO BANNER PRINCIPAL== -->
-
-        <!-- ==INICIO DO TEXTO+IMAGEM== -->
-        <section class="topo-do-site reveal">
-
-            <div class="interface">
-
-                <div class="flex">
-
-                    <div class="apresentação">
-                        <h1>Apresentação do site</h1>
-                        <p>Empresa especializada em soluções elétricas e refrigeração.</p>
-
-                        <div class="btn-contato">
-                            <button>
-                                Solicitar Orçamento
-                                <img class="whatsapp" src="./assets/icons/whatsapp.png">
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <div class="img-topo-site">
-                        <img src="./assets/img/logo-padrão.png">
+                        </p>
                     </div>
 
                 </div>
@@ -138,15 +138,19 @@
             </div>
 
         </section>
-        <!-- ==FIM DO TEXTO+IMAGEM== -->
 
-        <!-- ==INICIO DO CARROSEL DE ELÉTRICA== -->
+        <section class="frame-scroll">
+
+            <canvas id="frame-canvas"></canvas>
+
+        </section>
+
         <section class="carrosel-de-cards eletrica">
 
             <div class="carrosel-wrapper">
 
                 <div class="titulo-eletrica">
-                    <h1>Serviços de Elétrica</h1>
+                    <h1>Principais serviços de Elétrica</h1>
                 </div>
 
                 <button class="arrow left">&#10094;</button>
@@ -158,85 +162,99 @@
 
                         <div class="group">
 
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 1</h3>
-                                <p data-full="Texto maior 01">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+                            <div class="card"><img src="./assets/img/card-eletrica-01.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Executamos instalações completas, substituição de fiação antiga, novos pontos de tomadas, iluminação e quadros de distribuição. Adequamos sua residência para suportar novos equipamentos, eliminando riscos de curto-circuito e sobrecarga elétrica.">
+                                    Instalações e Reformas Elétricas</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 2</h3>
-                                <p data-full="Texto maior 02">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-02.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Elaboramos laudo técnico pericial para equipamentos danificados por surtos elétricos. Documento essencial para solicitação de ressarcimento junto à concessionária ou seguradora.">
+                                    Laudo de Queima</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 3</h3>
-                                <p data-full="Texto maior 03">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-03.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Instalamos dispositivos DR e DPS conforme NBR 5410 e NR-10, protegendo pessoas contra choques elétricos e equipamentos contra surtos de tensão.">
+                                    DR e DPS</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 4</h3>
-                                <p data-full="Texto maior 04">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-04.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Emitimos TRT, laudos NR-10 e relatórios técnicos garantindo conformidade legal, segurança operacional e respaldo jurídico para empresas e condomínios.">
+                                    TRT e Laudos</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 5</h3>
-                                <p data-full="Texto maior 05">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-05.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Realizamos inspeção completa de SPDA, medição de aterramento e emissão de laudos técnicos, protegendo edificações contra descargas atmosféricas.">
+                                    SPDA</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 6</h3>
-                                <p data-full="Texto maior 06">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-06.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Executamos comissionamento elétrico, análise de qualidade de energia, correção de fator de potência e projetos industriais de alta complexidade.">
+                                    Consultoria Industrial</p>
+                                <a href="#">Ver mais</a>
                             </div>
 
                         </div>
 
                         <div aria-hidden class="group">
 
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 1</h3>
-                                <p data-full="Texto maior 01">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+                            <div class="card"><img src="./assets/img/card-eletrica-01.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Executamos instalações completas, substituição de fiação antiga, novos pontos de tomadas, iluminação e quadros de distribuição.">
+                                    Instalações e Reformas Elétricas</p><a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 2</h3>
-                                <p data-full="Texto maior 02">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-02.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Elaboramos laudo técnico pericial para equipamentos danificados por surtos elétricos.">
+                                    Laudo de Queima</p><a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 3</h3>
-                                <p data-full="Texto maior 03">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-03.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Instalação de DR e DPS conforme normas técnicas, protegendo vidas e equipamentos.">
+                                    DR e DPS</p><a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 4</h3>
-                                <p data-full="Texto maior 04">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-04.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="TRT, laudos NR-10 e vistorias técnicas para segurança jurídica.">TRT e
+                                    Laudos</p><a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 5</h3>
-                                <p data-full="Texto maior 05">
-                                    Instalação elétrica
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-05.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="Inspeção e laudo técnico de sistemas de para-raios.">SPDA</p><a
+                                    href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 6</h3>
-                                <p data-full="Texto maior 06">
-                                    Instalação elétrica
+
+                            <div class="card"><img src="./assets/img/card-eletrica-06.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="Consultoria elétrica e comissionamento industrial.">Consultoria Industrial
                                 </p><a href="#">Ver mais</a>
                             </div>
 
                         </div>
+
 
                     </div>
 
@@ -249,14 +267,12 @@
             </div>
 
         </section>
-        <!-- ==FIM DO CARROSEL DE ELÉTRICA== -->
 
-        <!-- ==INICIO DO CARROSEL DE REFRIGERAÇÃO== -->
         <section class="carrosel-de-cards refrigeracao">
 
             <div class="carrosel-wrapper">
                 <div class="titulo-refrigeracao">
-                    <h1>Serviços de Refrigeração</h1>
+                    <h1>Principais serviços de Refrigeração</h1>
                 </div>
 
                 <button class="arrow left">&#10094;</button>
@@ -268,85 +284,97 @@
 
                         <div class="group">
 
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 1</h3>
-                                <p data-full="Texto maior 01">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+                            <div class="card"><img src="./assets/img/card-refrigeracao-01.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Instalação completa de equipamentos Split e Multi-Split seguindo normas técnicas e manuais dos fabricantes.">
+                                    Instalação de Ar-Condicionado</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 2</h3>
-                                <p data-full="Texto maior 02">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-02.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Higienização de filtros, serpentinas e dreno, eliminando fungos e bactérias e aumentando a vida útil do equipamento.">
+                                    Limpeza Preventiva</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 3</h3>
-                                <p data-full="Texto maior 03">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-03.jpg">
+                                <h3>Residencial</h3>
+                                <p
+                                    data-full="Diagnóstico técnico, troca de peças e reparos em placas eletrônicas e compressores.">
+                                    Manutenção Corretiva</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 4</h3>
-                                <p data-full="Texto maior 04">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-eletrica-04.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Plano PMOC conforme Lei 13.589/18 com relatórios técnicos e controle da qualidade do ar.">
+                                    Contrato PMOC</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 5</h3>
-                                <p data-full="Texto maior 05">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-05.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Projetos de climatização VRF, dutos e sistemas centrais para grandes áreas.">
+                                    Projetos de Climatização</p>
+                                <a href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 6</h3>
-                                <p data-full="Texto maior 06">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-06.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p
+                                    data-full="Consultoria técnica e fornecimento de equipamentos com foco em eficiência energética.">
+                                    Consultoria Técnica</p>
+                                <a href="#">Ver mais</a>
                             </div>
 
                         </div>
 
                         <div aria-hidden class="group">
 
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 1</h3>
-                                <p data-full="Texto maior 01">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+                            <div class="card"><img src="./assets/img/card-refrigeracao-01.jpg">
+                                <h3>Residencial</h3>
+                                <p data-full="Instalação técnica de ar-condicionado residencial.">Instalação de Ar</p><a
+                                    href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 2</h3>
-                                <p data-full="Texto maior 02">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-02.jpg">
+                                <h3>Residencial</h3>
+                                <p data-full="Limpeza e higienização completa do sistema.">Limpeza Preventiva</p><a
+                                    href="#">Ver mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 3</h3>
-                                <p data-full="Texto maior 03">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-03.jpg">
+                                <h3>Residencial</h3>
+                                <p data-full="Reparo técnico especializado.">Manutenção Corretiva</p><a href="#">Ver
+                                    mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 4</h3>
-                                <p data-full="Texto maior 04">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-04.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="PMOC conforme legislação vigente.">Contrato PMOC</p><a href="#">Ver
+                                    mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 5</h3>
-                                <p data-full="Texto maior 05">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-05.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="Projetos profissionais de climatização.">Projetos</p><a href="#">Ver
+                                    mais</a>
                             </div>
-                            <div class="card"><img src="./assets/img/img padrão.jpg">
-                                <h3>Card 6</h3>
-                                <p data-full="Texto maior 06">
-                                    Instalação refrigeração
-                                </p><a href="#">Ver mais</a>
+
+                            <div class="card"><img src="./assets/img/card-refrigeracao-06.jpg">
+                                <h3>Industrial / Comercial</h3>
+                                <p data-full="Consultoria técnica especializada.">Consultoria</p><a href="#">Ver
+                                    mais</a>
                             </div>
 
                         </div>
+
+
 
                     </div>
 
@@ -359,7 +387,6 @@
             </div>
 
         </section>
-        <!-- ==FIM DO CARROSEL DE REFRIGERAÇÃO== -->
 
     </main>
 
@@ -367,18 +394,207 @@
 
         <div class="modal-content">
 
-            <span class="close">&times;</span>
+            <div class="modal-banner">
+                <img id="modal-img">
+                <div class="modal-gradient"></div>
+                <h2 id="modal-title"></h2>
+            </div>
 
-            <img id="modal-img">
-
-            <h1 id="modal-title"></h1>
-
-            <p id="modal-text"></p>
+            <div class="modal-body">
+                <p id="modal-text"></p>
+            </div>
 
         </div>
 
     </div>
+
+
+    <section class="quem-somos">
+
+        <div class="interface">
+
+            <h1>Quem somos</h1>
+
+            <p class="quem-desc">
+                A IAD Soluções Elétricas &amp; Refrigeração é uma empresa com 8 anos de atuação no mercado,
+                especializada
+                em soluções elétricas e de refrigeração. Ao longo de nossa trajetória, construímos uma história pautada
+                na
+                qualidade dos serviços, na segurança operacional e no compromisso com a satisfação dos clientes.
+                Atuamos com foco em instalações, manutenções e diagnósticos técnicos, sempre seguindo rigorosamente as
+                normas técnicas e as boas práticas do setor. Nossa equipe trabalha com responsabilidade e
+                profissionalismo,
+                utilizando tecnologia adequada para oferecer soluções eficientes, confiáveis e alinhadas às necessidades
+                de
+                cada cliente.
+                Acreditamos que a confiança é construída por meio da transparência, da competência técnica e de um
+                relacionamento duradouro. Por isso, buscamos constantemente a melhoria contínua e a excelência em tudo
+                o que fazemos.
+            </p>
+
+            <div class="quem-cards">
+
+                <div class="quem-card">
+                    <span>🎯</span>
+                    <h2>Missão</h2>
+                    <p>
+                        Entregar soluções técnicas com excelência, garantindo segurança,
+                        conforto e satisfação aos nossos clientes.
+                    </p>
+                </div>
+
+                <div class="quem-card">
+                    <span>👁️</span>
+                    <h2>Visão</h2>
+                    <p>
+                        Ser referência regional em elétrica e refrigeração,
+                        reconhecida pela qualidade e confiança.
+                    </p>
+                </div>
+
+                <div class="quem-card">
+                    <span>💙</span>
+                    <h2>Valores</h2>
+                    <p>
+                        Ética, compromisso, transparência, respeito e foco total no cliente.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="parceiros">
+
+        <div class="parceiros-wrapper">
+
+            <div class="parceiros">
+
+                <div class="parceiros-track">
+
+                    <div class="parceiros-group">
+
+                        <img src="./assets/logo/Parceiro (1).jpg">
+                        <img src="./assets/logo/Parceiro (1).png">
+                        <img src="./assets/logo/Parceiro (1).webp">
+                        <img src="./assets/logo/Parceiro (2).jpg">
+                        <img src="./assets/logo/Parceiro (2).png">
+                        <img src="./assets/logo/Parceiro (3).jpg">
+                        <img src="./assets/logo/Parceiro (3).png">
+                        <img src="./assets/logo/Parceiro (4).png">
+                        <img src="./assets/logo/Parceiro (5).png">
+                        <img src="./assets/logo/Parceiro (6).png">
+                        <img src="./assets/logo/Parceiro (7).png">
+                        <img src="./assets/logo/Parceiro (8).png">
+                        <img src="./assets/logo/Parceiro (9).png">
+                        <img src="./assets/logo/Parceiro (10).png">
+                        <img src="./assets/logo/Parceiro (11).png">
+                        <img src="./assets/logo/Parceiro (12).png">
+                        <img src="./assets/logo/Parceiro (13).png">
+                        <img src="./assets/logo/Parceiro (14).png">
+                        <img src="./assets/logo/Parceiro (15).png">
+                        <img src="./assets/logo/Parceiro (16).png">
+                        <img src="./assets/logo/Parceiro (17).png">
+
+                    </div>
+
+                    <div aria-hidden class="parceiros-group">
+
+                        <img src="./assets/logo/Parceiro (1).jpg">
+                        <img src="./assets/logo/Parceiro (1).png">
+                        <img src="./assets/logo/Parceiro (1).webp">
+                        <img src="./assets/logo/Parceiro (2).jpg">
+                        <img src="./assets/logo/Parceiro (2).png">
+                        <img src="./assets/logo/Parceiro (3).jpg">
+                        <img src="./assets/logo/Parceiro (3).png">
+                        <img src="./assets/logo/Parceiro (4).png">
+                        <img src="./assets/logo/Parceiro (5).png">
+                        <img src="./assets/logo/Parceiro (6).png">
+                        <img src="./assets/logo/Parceiro (7).png">
+                        <img src="./assets/logo/Parceiro (8).png">
+                        <img src="./assets/logo/Parceiro (9).png">
+                        <img src="./assets/logo/Parceiro (10).png">
+                        <img src="./assets/logo/Parceiro (11).png">
+                        <img src="./assets/logo/Parceiro (12).png">
+                        <img src="./assets/logo/Parceiro (13).png">
+                        <img src="./assets/logo/Parceiro (14).png">
+                        <img src="./assets/logo/Parceiro (15).png">
+                        <img src="./assets/logo/Parceiro (16).png">
+                        <img src="./assets/logo/Parceiro (17).png">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <img src="./assets/logo/logoIAD.png" class="footer-logo">
+
+                <p>
+                    A IAD Soluções Elétricas e Refrigeração é especializada em instalação,
+                    manutenção e infraestrutura elétrica e de climatização.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Nossos Serviços</h4>
+                <ul>
+                    <li>Instalação de ar condicionado</li>
+                    <li>Manutenção preventiva</li>
+                    <li>Limpeza de ar condicionado</li>
+                    <li>Serviços elétricos</li>
+                    <li>Infraestrutura</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Informações</h4>
+
+                <p>📍 Mauá - SP</p>
+                <p>📞 (11) 99999-9999</p>
+                <p>✉ contato@iad.com.br</p>
+
+                <p class="footer-horario">
+                    Seg à Sex: 08h às 18h<br>
+                    Sábado: 09h às 12h
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Redes Sociais</h4>
+
+                <div class="footer-social">
+                    <a href="#">F</a>
+                    <a href="#">I</a>
+                    <a href="#">Y</a>
+                    <a href="#">L</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 IAD Soluções Elétricas e Refrigeração — Todos os direitos reservados
+        </div>
+
+    </footer>
+
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollSmoother.min.js"></script>
 
 <script src="./assets/js/scripts.js"></script>
 
