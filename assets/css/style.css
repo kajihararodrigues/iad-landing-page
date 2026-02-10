@@ -20,8 +20,6 @@ body {
     margin: 0 auto;
 }
 
-/*==FIM DO RESET GLOBAL==*/
-
 /*==INFO BAR==*/
 .top-info-bar {
     background: #122b6a;
@@ -58,8 +56,6 @@ body {
 .top-info-bar a:hover {
     opacity: .85;
 }
-
-/*==FIM DO INFO BAR==*/
 
 /*==MENU SUPERIOR==*/
 header {
@@ -142,8 +138,6 @@ header nav a:hover {
 header nav a:hover::after {
     transform: scaleX(1);
 }
-
-/*==FIM DO MENU SUPERIOR==*/
 
 /*==BANNER PRINCIPAL==*/
 .banner {
@@ -358,8 +352,6 @@ input[type=radio] {
     transform: scale(1.01);
 }
 
-/*==FIM DO BANNER PRINCIPAL==*/
-
 /*==SCROLL SHOW==*/
 .frame-scroll {
     height: 90vh;
@@ -377,8 +369,6 @@ input[type=radio] {
     z-index: 1;
 }
 
-/*==FIM DO SCROLL SHOW==*/
-
 /*==CARD-SLIDER==*/
 .carrosel-wrapper {
     padding: .1vw;
@@ -391,14 +381,15 @@ input[type=radio] {
 .carrosel {
     overflow: hidden;
     position: relative;
-    height: 22vw;
+    height: 20vw;
     padding: 0;
+    margin-bottom: .1vw;
 }
 
 .track {
     display: flex;
     gap: 1VW;
-    height: 21vw;
+    height: 20vw;
     padding: 0;
 }
 
@@ -418,7 +409,7 @@ input[type=radio] {
     border-radius: 1vw;
     color: black;
     text-align: center;
-    margin: .5vw 0;
+    margin: 0;
     box-shadow: .1vw .1vw .5vw rgb(124, 124, 124);
     opacity: 0;
     transform: translateY(30px) scale(.95);
@@ -437,7 +428,6 @@ input[type=radio] {
     border-radius: 1vw;
     display: block;
 }
-
 
 .card h3 {
     margin: .3vw;
@@ -580,7 +570,7 @@ input[type=radio] {
     gap: 1vw;
     background: #c0c0c0;
     border-radius: 50%;
-    margin: 0 5px;
+    margin: .3vw;
 }
 
 .dots span:nth-child(1) {
@@ -620,6 +610,7 @@ input[type=radio] {
     font-size: .9vw;
     align-items: center;
     justify-content: center;
+    margin-top: 3vw;
 }
 
 .carrosel {
@@ -638,12 +629,11 @@ input[type=radio] {
             transparent 100%);
 }
 
-/*==FIM DO CARD-SLIDER==*/
-
+/*==MODAL==*/
 .modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.65);
+    background: rgba(0, 0, 0, .65);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -665,7 +655,7 @@ input[type=radio] {
     background: white;
     border-radius: 1vw;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0,0,0,.45);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
     animation: modalUp .35s ease;
 }
 
@@ -684,7 +674,7 @@ input[type=radio] {
 .modal-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.7));
+    background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, .7));
 }
 
 .modal-banner h2 {
@@ -712,36 +702,43 @@ input[type=radio] {
     }
 }
 
+/*==QUEM SOMOS==*/
 .quem-somos {
-    padding: 6vw 0;
+    padding: .5vw 0;
     background: #fff;
+    color: #122b6a;
+    margin-top: 3vw;
 }
 
 .quem-somos h1 {
     text-align: center;
-    font-size: 2.5vw;
+    font-size: 2.7vw;
     margin-bottom: 1vw;
 }
 
 .quem-desc {
     text-align: center;
-    max-width: 50vw;
+    max-width: 70vw;
     margin: 0 auto 3vw;
-    font-size: 1vw;
+    font-size: 1.1vw;
+    font-weight: 600;
     opacity: .8;
 }
 
 .quem-cards {
+    max-width: 80vw;
+    margin: 5vw auto;
     display: flex;
     gap: 2vw;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .quem-card {
     background: #f3f3f3;
-    padding: 2vw;
+    padding: .5vw;
     border-radius: 1vw;
-    width: 18vw;
+    width: 25vw;
     text-align: center;
     transition: .3s;
 }
@@ -753,55 +750,47 @@ input[type=radio] {
 .quem-card span {
     font-size: 2vw;
     display: block;
-    margin-bottom: .5vw;
+    margin-bottom: .2vw;
 }
 
 .quem-card h2 {
-    font-size: 1.2vw;
-    margin-bottom: .5vw;
+    font-size: 1.8vw;
+    margin-bottom: .3vw;
 }
 
 .quem-card p {
-    font-size: .9vw;
+    font-size: 1vw;
     opacity: .8;
+    font-weight: 500;
 }
 
-/*==MARCAS PARCEIRAS==*/
 
+/*==MARCAS PARCEIRAS==*/
 .parceiros-wrapper {
     max-width: 80vw;
-    /* mesma largura do site */
-    margin: 40px auto;
+    margin: .8vw auto;
     position: relative;
-    /* border: 6px solid #000000; */
-    /* remover depois */
 }
 
 .parceiros {
     overflow: hidden;
-    /* border: 8px solid #b60000; */
-    /* remover depois */
-    padding: 15px;
+    padding: .8vw;
 }
 
 .parceiros-track {
-    /* border: 3px solid blue; */
-    /* remover depois */
     display: flex;
-    gap: 2em;
+    gap: 1vw;
 }
 
 .parceiros-group {
-    /* border: 3px solid rgb(255, 0, 212); */
-    /* remover depois */
     display: flex;
     align-items: center;
-    gap: 3em;
+    gap: 1vw;
     animation: parceiros-spin 35s infinite linear;
 }
 
 .parceiros-group img {
-    width: 120px;
+    width: 10vw;
     opacity: .8;
 }
 
@@ -815,11 +804,7 @@ input[type=radio] {
     }
 }
 
-/*==FIM MARCAS PARCEIRAS==*/
-
-
 /*==RODAPÉ==*/
-
 .footer-bottom {
     text-align: center;
     padding: 15px;
@@ -892,14 +877,13 @@ input[type=radio] {
     font-size: 14px;
 }
 
-/*==FIM DO RODAPÉ==*/
-
+/*==BOTÃO WHATASAPP==*/
 .whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
+    bottom: 5vw;
+    right: 5vw;
+    width: 3vw;
+    height: 3vw;
     background: #25d366;
     border-radius: 50%;
     display: flex;
@@ -911,7 +895,7 @@ input[type=radio] {
 }
 
 .whatsapp-float img {
-    width: 32px;
+    width: 3vw;
 }
 
 @keyframes pulse-whatsapp {
@@ -928,18 +912,7 @@ input[type=radio] {
     }
 }
 
-/* hover */
 .whatsapp-float:hover {
     transform: scale(1.1);
     transition: .3s;
-}
-
-/* mobile */
-@media(max-width:768px) {
-    .whatsapp-float {
-        width: 55px;
-        height: 55px;
-        bottom: 20px;
-        right: 20px;
-    }
 }
