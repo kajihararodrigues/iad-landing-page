@@ -1,17 +1,33 @@
-let current = 1;
+let currentSlide = 1;
+const totalSlides = 4;
+const slider = document.querySelector("#slider");
 
 setInterval(() => {
-    current++;
-    if (current > 4) current = 1;
-    document.getElementById("slide" + current).checked = true;
+    currentSlide++;
+    if (currentSlide > totalSlides) currentSlide = 1;
+    const slide = document.getElementById("slide" + currentSlide);
+    if (slide) slide.checked = true;
 }, 4000);
 
-window.addEventListener("DOMContentLoaded", () => {
-    const info = document.querySelector(".slider-info");
-    if (info) info.classList.add("active");
-});
-
-/* ================= REVEAL ================= */
+if (slider) {
+    let startX = 0;
+    slider.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+    });
+    slider.addEventListener("touchend", e => {
+        let endX = e.changedTouches[0].clientX;
+        let diff = startX - endX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0 && currentSlide < totalSlides) {
+                currentSlide++;
+            } else if (diff < 0 && currentSlide > 1) {
+                currentSlide--;
+            }
+            const slide = document.getElementById("slide" + currentSlide);
+            if (slide) slide.checked = true;
+        }
+    });
+}
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -19,173 +35,160 @@ const observer = new IntersectionObserver(entries => {
             entry.target.classList.add("active");
         }
     });
-}, {
-    threshold: 0.2
-});
+}, { threshold: 0.2 });
 
 document.querySelectorAll(".reveal, .reveal-left, .card").forEach(el => {
     observer.observe(el);
 });
 
-/* ================= CARDS HOVER FIX ================= */
-
-let hoveringCard = false;
-
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mouseenter", () => hoveringCard = true);
-    card.addEventListener("mouseleave", () => hoveringCard = false);
-});
-
-/* ================= CARROSEL ================= */
-
 window.addEventListener("DOMContentLoaded", () => {
-
     document.querySelectorAll(".carrosel-wrapper").forEach(wrapper => {
-
         const track = wrapper.querySelector(".track");
         const left = wrapper.querySelector(".arrow.left");
         const right = wrapper.querySelector(".arrow.right");
+        if (!track || !left || !right) return;
 
-        let offset = 0;
-        let speed = 0.35;
-        let manualTimeout;
-
-        const groupWidth = track.scrollWidth / 2;
-
-        function autoplay() {
-
-            offset -= speed;
-
-            if (Math.abs(offset) >= groupWidth) offset = 0;
-
-            track.style.transform = `translateX(${offset}px)`;
-
-            requestAnimationFrame(autoplay);
+        let index = 0;
+        const cards = wrapper.querySelectorAll(".card");
+        const visibleCards = 4;
+        const totalCards = cards.length;
+        
+        function updatePosition(){
+            const gap = window.innerWidth * 0.02;
+            const cardWidth = cards[0].offsetWidth + gap;
+            track.style.transform = `translateX(${-index * cardWidth}px)`;
         }
 
-        autoplay();
+        right.addEventListener("click", () => {
+            if(index < totalCards - visibleCards){
+                index++;
+                updatePosition();
+            }
+        });
 
-        function manualMove(value) {
+        left.addEventListener("click", () => {
+            if(index > 0){
+                index--;
+                updatePosition();
+            }
+        });
 
-            offset += value;
-
-            clearTimeout(manualTimeout);
-
-            manualTimeout = setTimeout(() => {
-                speed = 0.35;
-            }, 1500);
-        }
-
-        right.onclick = () => {
-            speed = 0;
-            manualMove(-220);
-        };
-
-        left.onclick = () => {
-            speed = 0;
-            manualMove(220);
-        };
-
-        wrapper.addEventListener("mouseenter", () => speed = 0);
-        wrapper.addEventListener("mouseleave", () => speed = 0.35);
-
+        window.addEventListener("resize", updatePosition);
     });
-
 });
 
-/* ================= MODAL ================= */
-
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const modalTitle = document.getElementById("modal-title");
-const modalText = document.getElementById("modal-text");
-
-document.querySelectorAll(".card a").forEach(btn => {
-    btn.addEventListener("click", e => {
+const form = document.getElementById("formContato");
+if(form) {
+    form.addEventListener("submit", function(e){
         e.preventDefault();
+        const captcha = document.getElementById("captchaCheck");
+        if(!captcha.checked){
+            alert("Confirme que você não é um robô 😉");
+            return;
+        }
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        const assunto = document.getElementById("assunto").value;
+        const mensagem = document.getElementById("mensagem").value;
 
-        const card = btn.closest(".card");
-
-        modalImg.src = card.querySelector("img").src;
-        modalTitle.innerText = card.querySelector("p").innerText;
-        modalText.innerText = card.querySelector("p").dataset.full;
-
-        modal.classList.add("active");
+        const texto = `Olá, vim pelo site da IAD Soluções.\n\nNome: ${nome}\nTelefone: ${telefone}\nEmail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`;
+        const numero = "5511959767766";
+        window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, "_blank");
     });
+}
+
+const btnMobile = document.querySelector(".menu-mobile-btn");
+const menuMobile = document.querySelector(".menu-mobile");
+
+if(btnMobile) {
+    btnMobile.addEventListener("click", () => menuMobile.classList.toggle("active"));
+}
+
+document.querySelectorAll(".menu-mobile a").forEach(link => {
+    link.addEventListener("click", () => menuMobile.classList.remove("active"));
 });
 
-modal.addEventListener("click", e => {
-    if (e.target === modal) modal.classList.remove("active");
-});
+if(window.innerWidth <= 900){
+    const eletricaTrack = document.querySelector(".eletrica-mobile .track");
+    const refrigTrack = document.querySelector(".refrigeracao-mobile .track");
 
-document.addEventListener("keydown", e => {
-    if (e.key === "Escape") modal.classList.remove("active");
-});
+    if(eletricaTrack) {
+        document.querySelectorAll(".carrosel-wrapper .card.eletrica").forEach(card=>{
+            const clone = card.cloneNode(true);
+            eletricaTrack.appendChild(clone);
+        });
+    }
 
-
-/* ================= GSAP + CANVAS ================= */
+    if(refrigTrack) {
+        document.querySelectorAll(".carrosel-wrapper .card.refrigeracao").forEach(card=>{
+            const clone = card.cloneNode(true);
+            refrigTrack.appendChild(clone);
+        });
+    }
+}
 
 gsap.registerPlugin(ScrollTrigger);
+const isMobile = window.innerWidth <= 900;
 
-const canvas = document.getElementById("frame-canvas");
-const ctx = canvas.getContext("2d");
-
-const frameCount = 147;
-
-const currentFrame = i =>
-    `./assets/frames/ezgif-frame-${String(i + 1).padStart(3, "0")}.jpg`;
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const images = [];
-const seq = { frame: 0 };
-
-for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    img.src = currentFrame(i);
-    images.push(img);
-}
-
-images[0].onload = () => {
-    seq.frame = 0;
-    render();
-};
-
-function render() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const img = images[Math.round(seq.frame)];
-    if (!img) return;
-
-    const scale = canvas.width / img.width;
-    const imgHeight = img.height * scale;
-
-    ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(img, 0, 0, canvas.width, imgHeight);
-}
-
-gsap.to(seq, {
-    frame: frameCount - 1,
-    snap: "frame",
-    ease: "none",
-
+gsap.from(".expertise:not(.expertise-reverse) .expertise-container", {
+    xPercent: isMobile ? 30 : 100,
+    ease: "power2.out",
     scrollTrigger: {
-        trigger: ".frame-scroll",
-        start: "top bottom",
-        end: "top top",
-        scrub: true,
-        invalidateOnRefresh: true
-    },
-
-    onUpdate: () => {
-        if (!hoveringCard) render();
+        trigger: ".expertise:not(.expertise-reverse)",
+        start: "top 90%",
+        end: "top center",
+        scrub: 1
     }
 });
 
-window.addEventListener("resize", () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    render();
+gsap.from(".expertise-reverse .expertise-container", {
+    xPercent: isMobile ? -30 : -100,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".expertise-reverse",
+        start: "top 90%",
+        end: "top center",
+        scrub: 1
+    }
 });
+
+if (!isMobile) {
+    gsap.from(".slider-info", {
+        y: 80, opacity: 0, duration: 1.2, ease: "power3.out", delay: 0.3
+    });
+
+    const scrubAnims = [".titulo-servicos", ".carrosel-servicos", ".quem-somos h1", ".quem-desc", ".quem-cards"];
+    scrubAnims.forEach(sel => {
+        gsap.from(sel, {
+            y: 60,
+            ease: "none",
+            scrollTrigger: {
+                trigger: sel,
+                start: "top bottom",
+                end: "top center",
+                scrub: 1
+            }
+        });
+    });
+
+    gsap.fromTo(".beneficios .beneficio",
+    { y: 70, scale: 0.95, filter: "grayscale(100%)", opacity: 0.6 },
+    {
+        y: 0, scale: 1, filter: "grayscale(0%)", opacity: 1,
+        duration: 0.6, stagger: 0.35, ease: "back.out(1.6)",
+        scrollTrigger: { trigger: ".beneficios-container", start: "top 75%" }
+    });
+
+    ScrollTrigger.create({
+        trigger: ".beneficios-container",
+        start: "top 75%",
+        onEnter: () => {
+            gsap.timeline().to(".cta-fechar .cta-btn", { y: -18, duration: 0.18, ease: "power2.out" })
+                          .to(".cta-fechar .cta-btn", { y: 0, duration: 0.25, ease: "bounce.out" })
+                          .repeat(4);
+        }
+    });
+}
+
+ScrollTrigger.refresh();

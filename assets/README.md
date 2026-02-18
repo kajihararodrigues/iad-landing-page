@@ -1,37 +1,55 @@
-# IAD Soluções Elétricas & Refrigeração
+# ⚡ IAD Soluções Elétricas & Refrigeração
 
-Website institucional desenvolvido para empresa especializada em elétrica residencial, industrial e sistemas de climatização.
+Website institucional desenvolvido para apresentação dos serviços da **IAD Soluções Elétricas e Refrigeração**, empresa especializada em elétrica residencial, industrial e climatização no Grande ABC.
 
-Projeto focado em performance visual, animações modernas e experiência do usuário.
+Projeto focado em performance visual, layout responsivo e animações modernas utilizando GSAP.
+
+---
+
+## 🌐 Acesse o projeto
+
+🔗 https://kajihararodrigues.github.io/iad-landing-page/
 
 ---
 
 ## 🚀 Tecnologias utilizadas
 
 - HTML5
-- CSS3
+- CSS3 (Responsivo)
 - JavaScript Vanilla
 - GSAP 3
 - ScrollTrigger
-- Canvas API
+- IntersectionObserver
 
 ---
 
 ## ✨ Funcionalidades
 
-✔ Slider principal automático  
-✔ Animação frame-by-frame com Canvas + Scroll  
-✔ Carrosséis infinitos de serviços  
-✔ Modal dinâmico nos cards  
-✔ Reveal animations com IntersectionObserver  
-✔ Seção institucional  
-✔ Parceiros com loop contínuo  
-✔ Footer completo  
+✔ Slider principal automático com swipe mobile  
+✔ Carrossel de serviços (desktop + versão mobile dinâmica)  
+✔ Menu mobile animado  
+✔ Seções institucionais com animações GSAP  
+✔ Reveal animations ao scroll  
+✔ Clonagem automática de cards para mobile  
+✔ Formulário com envio direto para WhatsApp  
+✔ Parceiros com scroll infinito  
 ✔ Botão flutuante WhatsApp  
+✔ Layout 100% responsivo
+
+---
+
+## 📱 Destaques do redesign
+
+- Nova estrutura mobile-first
+- Otimização do CSS responsivo
+- Redução de dependências externas
+- Melhor performance de animações
+- Organização visual profissional
 
 ---
 
 ## 📂 Estrutura do projeto
+
 
 assets/
  ├ css/
@@ -45,19 +63,18 @@ index.html
 
 ---
 
-## 🎯 Objetivo
+## 🎯 Objetivo do projeto
 
-Criar uma landing page moderna para apresentação de serviços elétricos e refrigeração, com foco em:
+Criar uma landing page moderna para apresentação de serviços elétricos e climatização com foco em:
 
-- Clareza visual
-- Impacto inicial
-- Animações suaves
-- Navegação intuitiva
 - Conversão via WhatsApp
+- Experiência visual fluida
+- Performance em dispositivos móveis
+- Clareza institucional
 
 ---
 
 ## 👨‍💻 Desenvolvido por
 
-Alysson Rodrigues  
+**Alysson Rodrigues**  
 Full Stack Developer
