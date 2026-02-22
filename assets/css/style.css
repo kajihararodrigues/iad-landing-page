@@ -221,11 +221,11 @@ html {
     }
 
     & .slide_2 {
-        background: url("../img/banner-principal-2.png") center/cover no-repeat;
+        background: url("../img/banner-principal-3.png") center/cover no-repeat;
     }
 
     & .slide_3 {
-        background: url("../img/banner-principal-3.png") center/cover no-repeat;
+        background: url("../img/banner-principal-2.png") center/cover no-repeat;
     }
 
     & .slide_4 {
@@ -306,7 +306,6 @@ html {
     #slide4:checked~#bullets label:nth-child(4) {
         background: #1a93cc;
     }
-
 }
 
 /*==INTRO==*/
@@ -341,7 +340,7 @@ html {
     }
 }
 
-/*==PRINCIPAIS SERVIÇOS==*/
+/*==SERVIÇOS==*/
 .carrosel-servicos {
     margin: 1vw 0;
 
@@ -551,22 +550,28 @@ html {
         overflow: hidden;
         width: 100%;
         margin-bottom: 2vw;
+        mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     & .marcas-track {
         display: flex;
-        gap: 2vw;
+        gap: 1.5vw;
         align-items: center;
-        animation: marcasScroll 28s linear infinite;
+        width: max-content;
+        animation: marcasScroll 35s linear infinite;
     }
 
     & .marcas-track img {
-        height: 5vw;
+        height: 4vw;
+        width: auto;
+        flex-shrink: 0;
         opacity: .8;
+        display: block;
     }
 
     & .btn-expertise {
-        display: inline-block;
+        display: inline-flex;
         align-items: center;
         gap: .8vw;
         background: #28a745;
@@ -1043,7 +1048,7 @@ html {
     }
 }
 
-/*==FOOTER PROFISSIONAL==*/
+/*==FOOTER==*/
 .footer {
     width: 100%;
     background: #0f2c44;
@@ -1054,7 +1059,6 @@ html {
         width: 85vw;
         margin: 0 auto;
         padding: 4vw 0;
-
         display: grid;
         grid-template-columns: 1.6fr 1fr 1fr;
         gap: 3vw;
@@ -1065,51 +1069,58 @@ html {
         align-items: baseline;
         gap: .6vw;
         margin-bottom: 1vw;
+
+        & h2 {
+            font-size: 2.4vw;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        & span {
+            font-size: .8vw;
+            opacity: .85;
+            color: #d8f1ff;
+        }
     }
 
-    & .footer-brand h2 {
-        font-size: 2.4vw;
-        font-weight: 700;
-        color: #fff;
-    }
+    & .footer-col {
+        & h4 {
+            font-size: 1vw;
+            margin-bottom: 1vw;
+            font-weight: 600;
+        }
 
-    & .footer-brand span {
-        font-size: .8vw;
-        opacity: .85;
-        color: #d8f1ff;
-    }
+        & p {
+            font-size: .9vw;
+            line-height: 1.4;
+            opacity: .85;
+        }
 
-    & .footer-col h4 {
-        font-size: 1vw;
-        margin-bottom: 1vw;
-        font-weight: 600;
-    }
+        & ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.3vw 2vw;
 
-    & .footer-col p {
-        font-size: .9vw;
-        line-height: 1.6;
-        opacity: .85;
-    }
+            & li {
+                margin-bottom: 0;
 
-    & .footer-col ul {
-        list-style: none;
-    }
+                & a {
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 0.8vw;
+                    opacity: .8;
+                    transition: .25s;
+                    line-height: 1.2;
+                    display: block;
 
-    & .footer-col ul li {
-        margin-bottom: .6vw;
-    }
-
-    & .footer-col ul a {
-        text-decoration: none;
-        color: #fff;
-        font-size: .9vw;
-        opacity: .8;
-        transition: .25s;
-    }
-
-    & .footer-col ul a:hover {
-        opacity: 1;
-        color: #1a93cc;
+                    &:hover {
+                        opacity: 1;
+                        color: #1a93cc;
+                    }
+                }
+            }
+        }
     }
 
     & .footer-horario {
@@ -1227,7 +1238,6 @@ html {
     color: #222;
     font-weight: 600;
 }
-
 
 /*==RESPONSIVO MOBILE==*/
 @media (max-width:900px) {
