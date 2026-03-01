@@ -15,26 +15,28 @@ Projeto focado em performance visual, layout responsivo e animações modernas u
 ## 🚀 Tecnologias utilizadas
 
 - HTML5
-- CSS3 (Responsivo)
+- CSS3 (Responsivo com Nesting)
 - JavaScript Vanilla
 - GSAP 3
 - ScrollTrigger
 - IntersectionObserver
+- **Common Ninja API** (Integração de avaliações reais)
 
 ---
 
 ## ✨ Funcionalidades
 
-✔ Slider principal automático com swipe mobile  
-✔ Carrossel de serviços (desktop + versão mobile dinâmica)  
-✔ Menu mobile animado  
-✔ Seções institucionais com animações GSAP  
-✔ Reveal animations ao scroll  
-✔ Clonagem automática de cards para mobile  
-✔ Formulário com envio direto para WhatsApp  
-✔ Parceiros com scroll infinito  
-✔ Botão flutuante WhatsApp  
+✔ Slider principal automático com swipe mobile
+✔ Carrossel de serviços (desktop + versão mobile dinâmica)
+✔ Menu mobile animado
+✔ Seções institucionais com animações GSAP
+✔ Reveal animations ao scroll
+✔ Clonagem automática de cards para mobile
+✔ Formulário com envio direto para WhatsApp
+✔ Parceiros com scroll infinito
+✔ Botão flutuante WhatsApp
 ✔ Layout 100% responsivo
+✔ **Widget dinâmico de Prova Social** (Avaliações reais do Google Business)
 
 ---
 
@@ -45,11 +47,12 @@ Projeto focado em performance visual, layout responsivo e animações modernas u
 - Redução de dependências externas
 - Melhor performance de animações
 - Organização visual profissional
+- **Cards de serviço especializados:** Títulos e descrições diretas focadas em autoridade técnica
+- **Substituição de prints por conteúdo dinâmico:** Maior nitidez e veracidade nas avaliações
 
 ---
 
 ## 📂 Estrutura do projeto
-
 
 assets/
  ├ css/
@@ -70,11 +73,11 @@ Criar uma landing page moderna para apresentação de serviços elétricos e cli
 - Conversão via WhatsApp
 - Experiência visual fluida
 - Performance em dispositivos móveis
-- Clareza institucional
+- Clareza institucional e autoridade técnica
 
 ---
 
 ## 👨‍💻 Desenvolvido por
 
-**Alysson Rodrigues**  
+**Alysson Rodrigues**
 Full Stack Developer
